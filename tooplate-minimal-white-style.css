@@ -376,9 +376,19 @@ https://www.tooplate.com/view/2141-minimal-white
             font-size: 16px;
             color: #000;
             font-weight: 400;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             letter-spacing: 2px;
             text-transform: uppercase;
+        }
+
+        .hero .about-text {
+            font-size: 16px;
+            color: #333;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .cta-button {
@@ -791,286 +801,602 @@ https://www.tooplate.com/view/2141-minimal-white
             z-index: -1;
         }
 
-        /* Section 3: Services - Asymmetric Grid */
-        .services {
+        /* Section 3: Research Papers */
+        .research {
             padding: 120px 20px;
             background: #fafafa;
             position: relative;
         }
 
-        .services::before,
-        .services::after {
+        .research::before {
             content: '';
             position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 2px solid #000;
-        }
-
-        .services::before {
             top: 80px;
             left: 5%;
-            animation: rotateSlowly 20s linear infinite;
-        }
-
-        .services::after {
-            bottom: 80px;
-            right: 5%;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #000;
             transform: rotate(45deg);
-            animation: rotateSlowly 20s linear infinite reverse;
         }
 
-        @keyframes rotateSlowly {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .services-header {
-            text-align: center;
+        .research-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
             margin-bottom: 80px;
             position: relative;
         }
 
-        .services-header h2 {
-            font-size: 56px;
+        .research-header h2 {
+            font-size: 48px;
             font-weight: 100;
             letter-spacing: -1px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
         }
 
-        .services-header h2::before,
-        .services-header h2::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 1px;
-            background: #000;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .services-header h2::before {
-            left: -50px;
-        }
-
-        .services-header h2::after {
-            right: -50px;
-        }
-
-        .services-header::after {
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #000 20%, #000 80%, transparent);
-        }
-
-        .asymmetric-grid {
+        .paper-item {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 100px 1fr;
             gap: 40px;
-            margin-bottom: 40px;
+            padding: 40px 0;
             position: relative;
-        }
-
-        .asymmetric-grid.reverse {
-            grid-template-columns: 1fr 2fr;
-        }
-
-        .service-large * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-large {
-            background: #fff;
-            padding: 60px;
-            border-left: 4px solid #000;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            overflow: hidden;
-        }
-
-        .service-large::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.02);
-            transition: left 0.6s ease;
-            pointer-events: none;
-        }
-
-        .service-large:hover::before {
-            left: 0;
-        }
-
-        .service-large::after {
-            content: '';
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            width: 15px;
-            height: 15px;
-            background: #000;
             transition: all 0.3s ease;
-            pointer-events: none;
-            z-index: 0;
         }
 
-        .service-large:hover::after {
-            transform: scale(1.5) rotate(45deg);
-        }
-
-        .service-large:hover {
+        .paper-item:hover {
             transform: translateX(10px);
-            border-left-width: 8px;
         }
 
-        .asymmetric-grid.reverse .service-large {
-            border-left: none;
-            border-right: 4px solid #000;
-        }
-
-        .asymmetric-grid.reverse .service-large::after {
-            right: auto;
-            left: 40px;
-        }
-
-        .asymmetric-grid.reverse .service-large:hover {
-            transform: translateX(-10px);
-            border-right-width: 8px;
-        }
-
-        .service-small {
-            background: #000;
-            color: #fff;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .service-small::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0;
-            height: 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: all 0.6s ease;
-            pointer-events: none;
-        }
-
-        .service-small:hover::before {
-            width: 200px;
-            height: 200px;
-        }
-
-        .service-number {
-            font-size: 88px;
+        .paper-number {
+            font-size: 64px;
             font-weight: 100;
             line-height: 1;
-            margin-bottom: 20px;
+            color: #000;
+            opacity: 0.15;
             transition: all 0.3s ease;
+        }
+
+        .paper-item:hover .paper-number {
+            opacity: 0.3;
+        }
+
+        .paper-content {
             position: relative;
         }
 
-        .service-small:hover .service-number {
-            transform: scale(1.1);
+        .paper-title {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
         }
 
-        .service-large h3,
-        .service-large p {
-            position: relative;
-            z-index: 1;
-            user-select: text;
+        .paper-item:hover .paper-title {
+            letter-spacing: 0px;
         }
 
-        .service-large h3 {
-            font-size: 36px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            display: inline-block;
-        }
-
-        .service-large h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #000;
-            transition: width 0.3s ease;
-        }
-
-        .service-large:hover h3::after {
-            width: 100%;
-        }
-
-        .service-large p {
+        .paper-authors {
+            font-size: 14px;
             color: #666;
-            line-height: 1.8;
-            font-size: 16px;
-            margin-bottom: 30px;
-            user-select: text;
-            -webkit-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
+            margin-bottom: 8px;
+            font-style: italic;
         }
 
-        .service-tag {
+        .paper-venue {
+            font-size: 13px;
+            color: #000;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .paper-link {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 8px 20px;
             border: 1px solid #000;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
             font-size: 11px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-top: 20px;
+            font-weight: 500;
             transition: all 0.3s ease;
-            cursor: pointer;
             position: relative;
-            z-index: 1;
-            text-decoration: none;
-            color: #000;
         }
 
-        .service-tag:hover {
+        .paper-link::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 5px;
+            height: 5px;
+            background: #000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .paper-link:hover {
             background: #000;
             color: #fff;
             transform: translateY(-2px);
         }
 
-        .service-small h4 {
-            font-size: 14px;
+        .paper-link:hover::after {
+            opacity: 1;
+            top: -3px;
+            right: -3px;
+        }
+
+        .research-more-container {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 1px solid #000;
+        }
+
+        .research-more-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: 400;
-            opacity: 0.9;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+            position: relative;
+        }
+
+        .research-more-btn::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid #000;
+            border-right: 2px solid #000;
             transition: all 0.3s ease;
         }
 
-        .service-small:hover h4 {
-            opacity: 1;
-            letter-spacing: 3px;
+        .research-more-btn:hover {
+            background: transparent;
+            color: #000;
+            transform: translate(-5px, -5px);
         }
 
-        /* Section 4: Contact - Minimal Form */
+        .research-more-btn:hover::before {
+            top: -15px;
+            right: -15px;
+        }
+
+        /* Publications Page */
+        .publications-page {
+            padding: 140px 20px 80px;
+            background: #fafafa;
+        }
+
+        .publications-page .container {
+            max-width: 1000px;
+        }
+
+        .publications-header {
+            margin-bottom: 80px;
+        }
+
+        .publications-header h1 {
+            font-size: 56px;
+            font-weight: 100;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .publications-intro {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            max-width: 700px;
+        }
+
+        .publication-year-section {
+            margin-bottom: 60px;
+        }
+
+        .year-heading {
+            font-size: 36px;
+            font-weight: 100;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .year-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #000;
+        }
+
+        .publication-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 30px;
+            padding: 40px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
+        }
+
+        .publication-number {
+            font-size: 48px;
+            font-weight: 100;
+            line-height: 1;
+            color: #000;
+            opacity: 0.15;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover .publication-number {
+            opacity: 0.3;
+        }
+
+        .publication-content {
+            position: relative;
+        }
+
+        .publication-title {
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover .publication-title {
+            letter-spacing: 0px;
+        }
+
+        .publication-authors {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .publication-venue {
+            font-size: 13px;
+            color: #000;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .publication-link {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1px solid #000;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .publication-link::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 5px;
+            height: 5px;
+            background: #000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .publication-link:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .publication-link:hover::after {
+            opacity: 1;
+            top: -3px;
+            right: -3px;
+        }
+
+        .publication-divider {
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        /* Section 4: Blog */
+        .blog {
+            padding: 120px 20px;
+            background: #fff;
+            position: relative;
+        }
+
+        .blog::before {
+            content: '';
+            position: absolute;
+            top: 80px;
+            right: 5%;
+            width: 1px;
+            height: 200px;
+            background: #000;
+        }
+
+        .blog-header {
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .blog-header h2 {
+            font-size: 56px;
+            font-weight: 100;
+            letter-spacing: -2px;
+        }
+
+        .blog-header .header-decoration {
+            width: 80px;
+            height: 2px;
+            background: #000;
+            margin-top: 20px;
+        }
+
+        .blog-post {
+            padding: 50px 0;
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            padding-left: 0;
+        }
+
+        .blog-post:hover {
+            border-left-color: #000;
+            padding-left: 30px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-date {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .blog-category {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border: 1px solid #000;
+            background: #fff;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover .blog-category {
+            background: #000;
+            color: #fff;
+        }
+
+        .blog-title {
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover .blog-title {
+            letter-spacing: -0.5px;
+        }
+
+        .blog-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .blog-link::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+
+        .blog-link:hover::before {
+            width: 100%;
+        }
+
+        .blog-link:hover {
+            transform: translateX(5px);
+        }
+
+        /* Blog Post Page */
+        .blog-post-page {
+            padding: 140px 20px 80px;
+            background: #fff;
+        }
+
+        .blog-post-page .container {
+            max-width: 800px;
+        }
+
+        .blog-post-header {
+            margin-bottom: 60px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #000;
+            transform: translateX(-5px);
+        }
+
+        .blog-post-page .blog-post-meta {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-page h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .blog-post-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .lead-paragraph {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #000;
+            font-weight: 300;
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 3px solid #000;
+        }
+
+        .blog-post-content h2 {
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content h3 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content ul,
+        .blog-post-content ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-post-content strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .blog-post-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+        }
+
+        .back-link-footer {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link-footer:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Section 5: Contact - Minimal Form */
         .contact {
             padding: 120px 20px;
             background: #fff;
@@ -1423,27 +1749,6 @@ https://www.tooplate.com/view/2141-minimal-white
                 display: none;
             }
 
-            .asymmetric-grid,
-            .asymmetric-grid.reverse {
-                grid-template-columns: 1fr;
-            }
-
-            .asymmetric-grid.reverse .service-large {
-                border-right: none;
-                border-left: 4px solid #000;
-            }
-
-            .asymmetric-grid.reverse .service-large::after {
-                left: auto;
-                right: 20px;
-            }
-
-            .asymmetric-grid.reverse .service-large:hover {
-                transform: translateX(10px);
-                border-left-width: 8px;
-                border-right-width: 4px;
-            }
-
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 60px;
@@ -1464,32 +1769,8 @@ https://www.tooplate.com/view/2141-minimal-white
                 font-size: 48px;
             }
 
-            .services-header h2,
             .split-left h2 {
                 font-size: 36px;
-            }
-
-            .services-header h2::before,
-            .services-header h2::after {
-                display: none;
-            }
-
-            .service-large {
-                padding: 40px;
-            }
-
-            .service-large::after {
-                top: 20px;
-                right: 20px;
-            }
-
-            .service-tag {
-                padding: 6px 12px;
-                font-size: 10px;
-            }
-
-            .service-number {
-                font-size: 60px;
             }
 
             .hero-decoration {
@@ -1510,15 +1791,118 @@ https://www.tooplate.com/view/2141-minimal-white
                 display: none;
             }
 
-            .services::before,
-            .services::after {
-                width: 30px;
-                height: 30px;
+            /* Blog section mobile */
+            .blog-header h2 {
+                font-size: 40px;
+            }
+
+            .blog-title {
+                font-size: 24px;
+            }
+
+            .blog-description {
+                font-size: 15px;
+            }
+
+            .blog-link {
+                font-size: 12px;
+            }
+
+            .blog::before {
+                display: none;
+            }
+
+            /* Blog post page mobile */
+            .blog-post-page h1 {
+                font-size: 32px;
+            }
+
+            .blog-post-content h2 {
+                font-size: 24px;
+            }
+
+            .blog-post-content h3 {
+                font-size: 20px;
+            }
+
+            .lead-paragraph {
+                font-size: 18px;
+            }
+
+            /* Publications page mobile */
+            .publications-header h1 {
+                font-size: 36px;
+            }
+
+            .publications-intro {
+                font-size: 16px;
+            }
+
+            .year-heading {
+                font-size: 28px;
+            }
+
+            .publication-item {
+                grid-template-columns: 50px 1fr;
+                gap: 20px;
+                padding: 30px 0;
+            }
+
+            .publication-number {
+                font-size: 32px;
+            }
+
+            .publication-title {
+                font-size: 18px;
+            }
+
+            .publication-authors,
+            .publication-venue {
+                font-size: 12px;
+            }
+
+            .publication-link {
+                padding: 6px 15px;
+                font-size: 10px;
             }
 
             footer::before,
             footer::after {
                 display: none;
+            }
+
+            /* Research section mobile */
+            .research-header h2 {
+                font-size: 36px;
+            }
+
+            .paper-item {
+                grid-template-columns: 60px 1fr;
+                gap: 20px;
+                padding: 30px 0;
+            }
+
+            .paper-number {
+                font-size: 40px;
+            }
+
+            .paper-title {
+                font-size: 20px;
+            }
+
+            .paper-authors,
+            .paper-venue {
+                font-size: 12px;
+            }
+
+            .paper-link {
+                padding: 6px 15px;
+                font-size: 10px;
+            }
+
+            .research::before {
+                width: 30px;
+                height: 30px;
             }
         }
         /* Accessibility - Reduced Motion */
